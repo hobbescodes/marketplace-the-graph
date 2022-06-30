@@ -1,11 +1,12 @@
 import Header from "../components/Header"
 
-const Home = () => {
+const SellNfts = () => {
     return (
         <div className="">
             <Header />
+            Sell Page
         </div>
     )
 }
 
-export default Home
+export default SellNfts
