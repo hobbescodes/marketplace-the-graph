@@ -15,7 +15,10 @@ const client = createClient({
     webSocketProvider,
 })
 
-function MyApp({ Component, pageProps }) {
+const appId = process.env.NEXT_PUBLIC_MORALIS_APP_ID
+const serverUrl = process.env.NEXT_PUBLIC_MORALIS_SERVER_URL
+
+const MyApp = ({ Component, pageProps }) => {
     return (
         <>
             <Head>
@@ -23,7 +26,7 @@ function MyApp({ Component, pageProps }) {
                 <meta name="description" content="NFT Marketplace" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <MoralisProvider initializeOnMount={false}>
+            <MoralisProvider appId={appId} serverUrl={serverUrl}>
                 <WagmiConfig client={client}>
                     <Component {...pageProps} />
                 </WagmiConfig>

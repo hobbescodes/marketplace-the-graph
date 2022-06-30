@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "moralis:sync": "moralis-admin-cli connect-local-devchain --chain hardhat --moralisSubdomain lk4cnr68qfgo.usemoralis.com --frpcPath ./frp/frpc"
   },
   "dependencies": {
     "ethers": "^5.6.9",
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",
+    "dotenv": "^16.0.1",
     "eslint": "8.18.0",
     "eslint-config-next": "12.2.0",
     "postcss": "^8.4.14",
