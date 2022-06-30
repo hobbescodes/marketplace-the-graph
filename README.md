@@ -1,3 +1,8 @@
+
+NOTE: ANY TIME that you reset your hardhat node, you will need to reset local devchain on moralis server dashboard in order for the events to start being tracked again!!
+It also will not clear out the previously listed events, so either do that manually or write a script to do it programmatically (<-- TODO)
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
