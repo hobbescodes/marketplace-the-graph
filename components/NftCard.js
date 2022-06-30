@@ -45,7 +45,7 @@ const NftCard = ({ nftAddress, price, seller, tokenId, marketplaceAddress }) => 
         if (tokenURI) {
             const requestURL = tokenURI.replace("ipfs://", "https://ipfs.io/ipfs/")
             const tokenURIResponse = await (await fetch(requestURL)).json()
-            console.log(tokenURIResponse)
+            // console.log(tokenURIResponse)
             setTokenName(tokenURIResponse.name)
             setDescription(tokenURIResponse.description)
             const imageURI = tokenURIResponse.image
