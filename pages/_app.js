@@ -1,6 +1,7 @@
 import "../styles/globals.css"
 import Head from "next/head"
 import { MoralisProvider } from "react-moralis"
+import { NotificationProvider } from "web3uikit"
 import Header from "../components/Header"
 
 const appId = process.env.NEXT_PUBLIC_MORALIS_APP_ID
@@ -15,8 +16,10 @@ const MyApp = ({ Component, pageProps }) => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <MoralisProvider appId={appId} serverUrl={serverUrl}>
-                <Header />
-                <Component {...pageProps} />
+                <NotificationProvider>
+                    <Header />
+                    <Component {...pageProps} />
+                </NotificationProvider>
             </MoralisProvider>
         </>
     )
