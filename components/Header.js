@@ -1,15 +1,8 @@
-import { useAccount, useConnect, useEnsName, useDisconnect } from "wagmi"
-import { InjectedConnector } from "wagmi/connectors/injected"
+import { ConnectButton } from "web3uikit"
 import Link from "next/link"
+import truncateStr from "../utils/truncateHash"
 
 const Header = () => {
-    const { address, isConnected } = useAccount()
-    const { data: ensName } = useEnsName({ address })
-    const { connect } = useConnect({
-        connector: new InjectedConnector(),
-    })
-    const { disconnect } = useDisconnect()
-
     return (
         <nav className="p-5 border-b-2 flex justify-between">
             <h1 className="p-4 font-bold text-3xl">NFT Marketplace</h1>
@@ -20,21 +13,7 @@ const Header = () => {
                 <Link href="/sellnft">
                     <a className="font-semibold">Sell NFTs</a>
                 </Link>
-                {isConnected ? (
-                    <button
-                        className="py-1 px-2 rounded-md bg-blue-50 text-blue-500"
-                        onClick={() => disconnect()}
-                    >
-                        {ensName ?? address}
-                    </button>
-                ) : (
-                    <button
-                        className="py-1 px-2 rounded-md bg-blue-50 text-blue-500"
-                        onClick={() => connect()}
-                    >
-                        Connect Wallet
-                    </button>
-                )}
+                <ConnectButton moralisAuth={false} />
             </div>
         </nav>
     )

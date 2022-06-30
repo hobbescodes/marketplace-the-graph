@@ -17,7 +17,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-moralis": "^1.4.0",
-    "wagmi": "^0.5.5"
+    "wagmi": "^0.5.5",
+    "web3uikit": "^0.1.163"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",
